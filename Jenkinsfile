@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('puppet_Syntax') {
       steps {
-        ansiblePlaybook(playbook: 'manifest.yml', colorized: true, disableHostKeyChecking: true, inventory: 'hosts')
+        ansiblePlaybook(playbook: 'manifest.yml', colorized: true, disableHostKeyChecking: true, inventory: 'hosts', credentialsId: 'password.yaml')
       }
     }
     stage('Wait') {
