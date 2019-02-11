@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('puppet_Syntax') {
       steps {
-        ansiblePlaybook(playbook: 'manifest.yml', colorized: true, disableHostKeyChecking: true, inventory: 'hosts', become: true)
+        ansiblePlaybook(playbook: 'manifest.yml', colorized: true, disableHostKeyChecking: true, inventory: 'hosts', become: true, becomeUser: 'lnxcfg')
       }
     }
     stage('Wait') {
